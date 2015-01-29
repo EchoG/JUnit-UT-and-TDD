@@ -1,0 +1,28 @@
+LAB REPORT - TDD
+
+Name: 
+Andrew ID:
+
+1. Summary 
+
+// Describe briefly what you did during this lab.
+// List the tasks performed and completed. 
+// List which tasks are outstanding or partially completed.
+// Use bullet points. 
+ 
+2. Lessons Learned
+
+// What did you learn? 
+// What worked well?
+// What challenges did you face? 
+// How would you do it differently next time?
+// Use bullet points.
+
+3. Suggestions for Improvements (Optional)
+
+// List any suggestions for improving this lab. 
+// Be as specific as possible.
+// Use bullet points.
+
+
+/** This report should be about one page long. **/
