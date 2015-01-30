@@ -189,8 +189,8 @@ public class SocialNetwork implements ISocialNetwork{
 	@Override
 	public Collection<String> recommendFriends() {
 		// TODO Auto-generated method stub
-		Collection<String> friendsRecommened = new HashSet<String>();
-		Hashtable<String, Integer> allFriends = new Hashtable<String, Integer>();
+		Collection<String> friendsRecommened = new HashSet<String>();//people who will be recommended to the loginMember
+		Hashtable<String, Integer> allFriends = new Hashtable<String, Integer>();//save all friends of friends
 		Set<String> friends = loginMember.getFriends();
 		Iterator<String> it = friends.iterator();
 		while(it.hasNext()){
@@ -200,7 +200,7 @@ public class SocialNetwork implements ISocialNetwork{
 			Iterator<String> itFri = friOfFri.iterator();
 			while(itFri.hasNext()){
 				String tmp = itFri.next();
-				if(allFriends.containsKey(tmp)){
+				if(allFriends.containsKey(tmp)){ //if the person has been put in, then the count add 1
 					int count = allFriends.get(tmp);
 					allFriends.put(tmp, count+1);
 				}else{
@@ -212,8 +212,8 @@ public class SocialNetwork implements ISocialNetwork{
 		}
 		Set<String> keys = allFriends.keySet();
 		for(String key:keys){
+			// if the person isn't a friend of the loginMember and has more than one common friends with the loginMember
 			if(!loginMember.hasFriend(key) && allFriends.get(key) > 1){
-				//System.out.println(key);
 				friendsRecommened.add(key);
 			}
 		}
