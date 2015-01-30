@@ -15,6 +15,12 @@ public class SocialNetwork implements ISocialNetwork{
 	public Account join(String userName) {
 		if(userName!=null && userName!=""){
 			if(findAccountForUserName(userName)!=null){
+				try {
+					throw new UserExistsException();
+				} catch (UserExistsException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				return null;
 			}
 			else{
@@ -138,6 +144,9 @@ public class SocialNetwork implements ISocialNetwork{
 		@Override
 		public Account login(Account me) throws UserNotFoundException {
 			// TODO Auto-generated method stub
+			if(!accounts.contains(me)){
+				throw new UserNotFoundException();
+			}
 			if(loginMember!=null){
 				logout();
 				loginMember = me;
@@ -163,14 +172,15 @@ public class SocialNetwork implements ISocialNetwork{
 			// TODO Auto-generated method stub
 			if(findAccountForUserName(userName)!=null){
 				return true;
+			}else{
+				return false;
 			}
-			return false;
+			
 		}
 
 		@Override
 		// send request from loginMember to userName
-		public void sendFriendRequestTo(String userName)
-				throws UserNotFoundException {
+		public void sendFriendRequestTo(String userName) throws UserNotFoundException {
 			// TODO Auto-generated method stub
 			if(findAccountForUserName(userName)!=null){
 				findAccountForUserName(userName).befriend(loginMember);
