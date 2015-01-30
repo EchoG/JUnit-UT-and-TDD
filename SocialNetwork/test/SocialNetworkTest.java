@@ -350,36 +350,6 @@ public class SocialNetworkTest {
 		assertEquals(0, me.getFriends().size());
 	}
 	
-//	@Test
-//	public void acceptAllPendingReqsContainingNull(){
-//		Account me = sn.join("Hakan");
-//		Account her = sn.join("Cecile");
-//		Account lily = sn.join("Lily");
-//		Account lucy = new Account("");
-//		try {
-//			sn.login(her);
-//			sn.sendFriendRequestTo("Hakan");
-//			sn.login(lily);
-//			sn.sendFriendRequestTo("Hakan");
-//			sn.login(lucy);
-//			sn.sendFriendRequestTo("Hakan");
-//			sn.login(me);
-//			sn.acceptAllFriendRequestsTo();
-//		} catch (UserNotFoundException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
-//		
-//		assertTrue(me.hasFriend(her.getUserName()));
-//		assertTrue(me.hasFriend(lily.getUserName()));
-//		System.out.println();
-//		assertFalse(me.hasFriend(lucy.getUserName()));
-//		assertTrue(her.hasFriend(me.getUserName()));
-//		assertTrue(lily.hasFriend(me.getUserName()));
-//		assertFalse(lucy.hasFriend(me.getUserName()));
-//		
-//	}
-	
 	@Test
 	public void rejectAFriendReqWithoutReq() throws UserNotFoundException {
 		Account me = sn.join("Hakan");
